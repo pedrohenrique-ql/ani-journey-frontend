@@ -1,0 +1,25 @@
+# Dependencies
+/node_modules
+/pnpm-lock.yaml
+
+# Build
+/build
+/.next
+
+# Tests
+/tests/coverage
+/test-results
+/playwright-report
+/playwright/.cache
+
+# Configuration
+.husky
+
+# Cache
+.cache
+.eslintcache
+tsconfig.tsbuildinfo
+
+# Miscellaneous
+.vscode
+local
