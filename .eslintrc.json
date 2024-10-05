@@ -1,5 +1,5 @@
 {
-  "extends": ["prettier", "turbo", "next/typescript", "next/core-web-vitals"],
+  "extends": ["prettier", "next/typescript", "next/core-web-vitals"],
   "plugins": ["prettier", "@typescript-eslint", "import-helpers", "react", "react-hooks", "jsx-a11y"],
 
   "parser": "@typescript-eslint/parser",
@@ -255,8 +255,6 @@
     ],
     "@typescript-eslint/no-implied-eval": "error",
     "@typescript-eslint/no-explicit-any": "warn",
-
-    "turbo/no-undeclared-env-vars": "off",
 
     "react/display-name": "error",
     "react/no-unescaped-entities": "off",
