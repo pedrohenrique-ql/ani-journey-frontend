@@ -4,7 +4,7 @@ import { Roboto } from 'next/font/google';
 import { PropsWithChildren } from 'react';
 
 import '@/styles/global.css';
-import RootProvider from '@/providers/RootProvider';
+import RootProvider from '@/app/providers/RootProvider';
 
 const poppinsFont = Roboto({
   weight: ['300', '400', '500', '700'],
