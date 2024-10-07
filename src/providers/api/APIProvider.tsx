@@ -1,10 +1,14 @@
+'use client';
+
 import { PropsWithChildren, useMemo } from 'react';
 
 import AniJourneyClient from '@/clients/AniJourneyClient';
 
 import APIContext, { APIContextValue } from './APIContext';
 
-function APIProvider({ children }: PropsWithChildren) {
+type Props = PropsWithChildren;
+
+function APIProvider({ children }: Props) {
   const aniJourneyClient = useMemo(() => new AniJourneyClient(), []);
 
   const api = useMemo<APIContextValue>(

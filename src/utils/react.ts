@@ -1,35 +1,17 @@
-import {
-  createContext as createReactContext,
-  Context as ReactContext,
-  Provider as ReactProvider,
-  useContext as useReactContext,
-} from 'react';
+import { Context, useContext } from 'react';
 
-interface Context<ContextValue> {
-  Context: ReactContext<ContextValue | undefined>;
-  Provider: ReactProvider<ContextValue | undefined>;
-  useContext: () => ContextValue;
+export class NoContextProviderError extends Error {
+  constructor(contextName: string) {
+    super(`Cannot access '${contextName}' without a provider.`);
+  }
 }
 
-export function createContext<ContextValue>(
-  contextName: string,
-  initialValue: ContextValue | undefined = undefined,
-): Context<ContextValue> {
-  const Context = createReactContext(initialValue);
+export function useStrictContext<ContextValue>(contextName: string, context: Context<ContextValue | undefined>) {
+  const contextValue = useContext(context);
 
-  function useContext() {
-    const contextValue = useReactContext(Context);
-
-    if (contextValue === undefined) {
-      throw new Error(`Cannot use 'use${contextName}' outside of a '${contextName}Provider'.`);
-    }
-
-    return contextValue;
+  if (contextValue === undefined) {
+    throw new NoContextProviderError(contextName);
   }
 
-  return {
-    Context,
-    Provider: Context.Provider,
-    useContext,
-  };
+  return contextValue;
 }

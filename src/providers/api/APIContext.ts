@@ -1,10 +1,11 @@
+import { createContext } from 'react';
+
 import AniJourneyClient from '@/clients/AniJourneyClient';
-import { createContext } from '@/utils/react';
 
 export interface APIContextValue {
   aniJourney: AniJourneyClient;
 }
 
-const APIContext = createContext<APIContextValue>('APIContext');
+const APIContext = createContext<APIContextValue | undefined>(undefined);
 
 export default APIContext;
