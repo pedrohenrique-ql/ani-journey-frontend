@@ -3,7 +3,7 @@ import { AxiosInstance } from 'axios';
 export interface AnimeSearchQuery {
   title?: string;
   page?: number;
-  perPage?: number;
+  pageSize?: number;
 }
 
 export interface Anime {

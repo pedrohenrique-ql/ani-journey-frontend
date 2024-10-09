@@ -6,14 +6,14 @@ interface Props {
 
 function AnimeCard({ imageUrl }: Props) {
   return (
-    <div className="rounded-xl transition-shadow transition-transform hover:scale-105 hover:shadow-xl">
+    <div className="rounded-xl transition-shadow transition-transform hover:scale-105 hover:shadow-xl-blue">
       <Image
         alt="Anime Image"
         src={imageUrl}
-        priority={false}
+        priority
         width={150}
-        height={50}
-        className="h-56 w-40 rounded-xl"
+        height={250}
+        className="rounded-xl lg:h-64 lg:w-48 2xl:h-[17rem] 2xl:w-48"
       />
     </div>
   );

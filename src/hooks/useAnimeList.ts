@@ -5,13 +5,13 @@ import { AnimeSearchQuery, AnimeSearchResponse } from '@/clients/anime/AnimeClie
 
 import useAPI from './useAPI';
 
-const DEFAULT_PAGE_SIZE = 25;
+const DEFAULT_PAGE_SIZE = 18;
 
 const EMPTY_ANIME_SEARCH_PAGES = [] as const;
 
 interface AnimeSearchPageParams {
   page: number;
-  perPage: number;
+  pageSize: number;
 }
 
 const animeSearchKey = {
@@ -20,10 +20,10 @@ const animeSearchKey = {
   },
 };
 
-function useAnimeList(filters: AnimeSearchQuery = {}) {
+function useAnimeList(filters: AnimeSearchQuery = {}, options: { enabled?: boolean } = {}) {
   const api = useAPI();
 
-  const pageSize = filters.perPage ?? DEFAULT_PAGE_SIZE;
+  const pageSize = filters.pageSize ?? DEFAULT_PAGE_SIZE;
 
   const {
     data: { pages: animeSearchPages = EMPTY_ANIME_SEARCH_PAGES } = {},
@@ -33,19 +33,21 @@ function useAnimeList(filters: AnimeSearchQuery = {}) {
     error,
     fetchNextPage,
     refetch,
+    hasNextPage,
   } = useInfiniteQuery<AnimeSearchResponse, Error, InfiniteData<AnimeSearchResponse>, QueryKey, AnimeSearchPageParams>({
     queryKey: animeSearchKey.byFilters(filters),
-    queryFn: ({ pageParam: { page, perPage } }) => {
+    queryFn: ({ pageParam: { page, pageSize } }) => {
       return api.aniJourney.anime.searchAnime({
         ...filters,
         page,
-        perPage,
+        pageSize,
       });
     },
-    initialPageParam: { page: 1, perPage: pageSize },
+    initialPageParam: { page: 1, pageSize },
     getNextPageParam: (lastPage, allPages) => {
-      return lastPage.animeList.length < pageSize ? undefined : { page: allPages.length + 1, perPage: pageSize };
+      return lastPage.animeList.length < pageSize ? undefined : { page: allPages.length + 1, pageSize };
     },
+    enabled: options.enabled,
   });
 
   const animeList = useMemo(() => {
@@ -56,7 +58,17 @@ function useAnimeList(filters: AnimeSearchQuery = {}) {
     return animeSearchPages.length > 0 ? animeSearchPages[0].total : 0;
   }, [animeSearchPages]);
 
-  return { list: animeList, total, isLoading, isFetchingNextPage, isSuccess, error, fetchNextPage, refetch };
+  return {
+    list: animeList,
+    total,
+    isLoading,
+    isFetchingNextPage,
+    isSuccess,
+    hasNextPage,
+    error,
+    fetchNextPage,
+    refetch,
+  };
 }
 
 export default useAnimeList;

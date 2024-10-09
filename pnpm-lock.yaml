@@ -11,6 +11,9 @@ dependencies:
   '@tanstack/react-query':
     specifier: ^5.59.0
     version: 5.59.0(react@18.3.1)
+  '@uidotdev/usehooks':
+    specifier: ^2.4.1
+    version: 2.4.1(react-dom@18.3.1)(react@18.3.1)
   axios:
     specifier: ^1.7.7
     version: 1.7.7
@@ -29,6 +32,9 @@ dependencies:
   react-hook-form:
     specifier: ^7.53.0
     version: 7.53.0(react@18.3.1)
+  react-infinite-scroll-hook:
+    specifier: ^5.0.1
+    version: 5.0.1(react-dom@18.3.1)(react@18.3.1)
   zod:
     specifier: ^3.23.8
     version: 3.23.8
@@ -533,6 +539,17 @@ packages:
       '@typescript-eslint/types': 8.8.0
       eslint-visitor-keys: 3.4.3
     dev: true
+
+  /@uidotdev/usehooks@2.4.1(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-1I+RwWyS+kdv3Mv0Vmc+p0dPYH0DTRAo04HLyXReYBL9AeseDWUJyi4THuksBJcu9F0Pih69Ak150VDnqbVnXg==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
 
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
@@ -2827,6 +2844,27 @@ packages:
       react: ^16.8.0 || ^17 || ^18 || ^19
     dependencies:
       react: 18.3.1
+    dev: false
+
+  /react-infinite-scroll-hook@5.0.1(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-fn6+8BAZLQ9C1fvO5kPicGjDR2WHxK7rP4aaSWuaJkvtoJjYuudGJ9wjgPox7dghKm5Xj9cpKFycM86/wAJ3ig==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-intersection-observer-hook: 3.0.1(react-dom@18.3.1)(react@18.3.1)
+    dev: false
+
+  /react-intersection-observer-hook@3.0.1(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-nehzFUV+jVY49tc9FOm4yJHrmFFtCmsBZKiN1rUUB2675CMBf6kKu1ekuTqvCnmh4XG7RFP3bMyAevfqfV94xw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
   /react-is@16.13.1:

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="pt-BR">
-      <body className={clsx('text-zinc-900', poppinsFont.className)}>
+      <body className={clsx('bg-surface-dark-500 text-neutral-50 antialiased', poppinsFont.className)}>
         <RootProvider>{children}</RootProvider>
       </body>
     </html>
