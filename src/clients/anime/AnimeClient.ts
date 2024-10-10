@@ -34,6 +34,12 @@ class AnimeClient {
 
     return response.data;
   }
+
+  async getById(animeId: Anime['id']) {
+    const response = await this.http.get<Anime>(`/anime/${animeId}`);
+
+    return response.data;
+  }
 }
 
 export default AnimeClient;

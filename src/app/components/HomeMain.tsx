@@ -10,7 +10,7 @@ import LoadingIcon from '@/components/icons/LoadingIcon';
 import useAnimeList from '@/hooks/useAnimeList';
 
 function HomeMain() {
-  const [animeSearchTerm, setAnimeSearchTerm] = useState<string | undefined>(undefined);
+  const [animeSearchTerm, setAnimeSearchTerm] = useState<string>('');
   const debouncedSearchTerm = useDebounce(animeSearchTerm, 500);
 
   const {
@@ -24,7 +24,7 @@ function HomeMain() {
     {
       title: debouncedSearchTerm,
     },
-    { enabled: debouncedSearchTerm === undefined || !!debouncedSearchTerm },
+    { enabled: debouncedSearchTerm === '' || !!debouncedSearchTerm },
   );
 
   const [sentryRef] = useInfiniteScroll({
@@ -63,7 +63,7 @@ function HomeMain() {
           {!isLoading && (
             <section className="grid grid-cols-1 justify-center gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-6">
               {animeList.map((anime) => (
-                <AnimeCard key={anime.id} imageUrl={anime.image} />
+                <AnimeCard key={anime.id} imageUrl={anime.image} animeId={anime.id} />
               ))}
 
               {hasNextPage && (
