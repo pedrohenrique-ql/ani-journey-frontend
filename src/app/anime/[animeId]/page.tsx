@@ -1,7 +1,7 @@
 'use client';
 
 import { Anime } from '@/clients/anime/AnimeClient';
-import LoadingIcon from '@/components/icons/LoadingIcon';
+import LoadingPage from '@/components/common/LoadingPage';
 import useAnime from '@/hooks/useAnime';
 
 interface PageParams {
@@ -17,7 +17,7 @@ function AnimePage({ params }: Props) {
   const { data: anime, isLoading } = useAnime(animeId);
 
   if (isLoading) {
-    return <LoadingIcon role="img" alt="Carregando..." className="h-8 w-8" />;
+    return <LoadingPage />;
   }
 
   if (!anime) {
