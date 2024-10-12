@@ -2,6 +2,10 @@
   "name": "ani-journey-frontend",
   "version": "0.1.0",
   "private": false,
+  "packageManager": "pnpm@9.12.1",
+  "engines": {
+    "node": ">=20.11.0 <21"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
