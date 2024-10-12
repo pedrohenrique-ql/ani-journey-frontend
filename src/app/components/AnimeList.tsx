@@ -1,7 +1,7 @@
 import { UseInfiniteScrollHookRefCallback } from 'react-infinite-scroll-hook';
 
 import { Anime } from '@/clients/anime/AnimeClient';
-import AnimeCard from '@/components/common/AnimeCard';
+import AnimeCardLink from '@/components/common/AnimeCardLink';
 import LoadingIcon from '@/components/icons/LoadingIcon';
 
 interface Props {
@@ -14,7 +14,7 @@ function AnimeList({ animeList, hasNextPage, sentryRef }: Props) {
   return (
     <section className="grid grid-cols-1 justify-center gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-6">
       {animeList.map((anime) => (
-        <AnimeCard key={anime.id} imageUrl={anime.image} animeId={anime.id} />
+        <AnimeCardLink key={anime.id} imageUrl={anime.image} animeId={anime.id} />
       ))}
 
       {hasNextPage && (
