@@ -15,6 +15,7 @@ function AnimeCardLink({ imageUrl, animeId }: Props) {
       <AnimeCard
         imageUrl={imageUrl}
         className="transition-shadow transition-transform hover:scale-105 hover:shadow-xl-blue"
+        imageClassName="h-64 w-48 2xl:h-[17rem] 2xl:w-48"
       />
     </Link>
   );

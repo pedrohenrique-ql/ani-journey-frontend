@@ -4,6 +4,8 @@ import { Anime } from '@/clients/anime/AnimeClient';
 import LoadingPage from '@/components/common/LoadingPage';
 import useAnime from '@/hooks/useAnime';
 
+import AnimeDetails from './components/AnimeDetails';
+
 interface PageParams {
   animeId: Anime['id'];
 }
@@ -25,19 +27,9 @@ function AnimePage({ params }: Props) {
   }
 
   return (
-    <div className="mx-44 mt-20 rounded-lg bg-surface-dark-200 p-8">
+    <div className="mx-52 mt-20 rounded-xl bg-surface-dark-400 p-8">
       <div className="flex justify-center">
-        <div className="flex space-x-8">
-          <div className="space-y-4">
-            <h1 className="text-4xl font-bold">{anime.japaneseTitle}</h1>
-            <h2 className="text-2xl">{anime.englishTitle}</h2>
-            <p>{anime.synopsis}</p>
-            <p>N° de episódios: {anime.episodes} episódios</p>
-            <p>Status: {anime.status}</p>
-            <p>Ano de lançamento: {anime.releaseAir}</p>
-            <p>Avaliação: {anime.rating}</p>
-          </div>
-        </div>
+        <AnimeDetails anime={anime} />
       </div>
     </div>
   );

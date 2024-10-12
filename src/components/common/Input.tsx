@@ -36,7 +36,7 @@ function Input(
           <input
             ref={ref}
             placeholder={labelAsPlaceholder ? label : placeholder}
-            className="right-10 w-full rounded-md bg-surface-dark-700 p-3 text-sm ring-1 ring-surface-dark-400 transition-shadow placeholder:text-surface-dark-400 hover:ring-2 hover:ring-surface-dark-400 focus:outline-none focus:ring-2 focus:ring-neutral-500 sm:p-4 sm:text-base"
+            className="right-10 w-full rounded-md bg-surface-dark-400 p-3 text-sm ring-1 ring-surface-dark-100 transition-shadow placeholder:text-surface-dark-100 hover:ring-2 hover:ring-surface-dark-100 focus:outline-none focus:ring-2 focus:ring-neutral-500 sm:p-4 sm:text-base"
             {...rest}
           />
         </div>
