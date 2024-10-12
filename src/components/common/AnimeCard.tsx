@@ -7,6 +7,7 @@ interface Props {
   imageClassName?: string;
 }
 
+/** Imagem de um anime */
 function AnimeCard({ imageUrl, className, imageClassName }: Props) {
   return (
     <div className={clsx('rounded-xl', className)}>

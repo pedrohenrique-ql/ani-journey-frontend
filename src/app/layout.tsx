@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   description: 'Acompanhe e compartilhe sua jornada de animes',
 };
 
+/** Componente de layout raiz do sistema */
 function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="pt-BR">

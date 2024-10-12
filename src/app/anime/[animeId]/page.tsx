@@ -14,6 +14,7 @@ interface Props {
   params: PageParams;
 }
 
+/** Página de um anime específico */
 function AnimePage({ params }: Props) {
   const { animeId } = params;
   const { data: anime, isLoading } = useAnime(animeId);

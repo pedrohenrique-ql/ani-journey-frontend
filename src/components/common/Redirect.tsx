@@ -7,6 +7,7 @@ interface Props {
   to: string;
 }
 
+/** Componente de redirecionamento */
 function Redirect({ to }: Props) {
   const router = useRouter();
 

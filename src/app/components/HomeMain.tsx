@@ -10,6 +10,7 @@ import useAnimeList from '@/hooks/useAnimeList';
 
 import AnimeList from './AnimeList';
 
+/** Componente do conteúdo principal da página inicial */
 function HomeMain() {
   const [animeSearchTerm, setAnimeSearchTerm] = useState<string>('');
   const debouncedSearchTerm = useDebounce(animeSearchTerm, 500);

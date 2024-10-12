@@ -1,5 +1,6 @@
 import LoadingIcon from '../icons/LoadingIcon';
 
+/** Componente de carregamento da página */
 function LoadingPage() {
   return (
     <div className="flex h-screen items-center justify-center">

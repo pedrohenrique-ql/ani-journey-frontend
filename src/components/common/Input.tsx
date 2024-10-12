@@ -17,6 +17,7 @@ interface Props extends ComponentProps<'input'> {
   className?: string;
 }
 
+/** Componente de input personalizado */
 function Input(
   { label, labelAsPlaceholder, leftContent, placeholder, errorMessage, className, ...rest }: Props,
   ref: ForwardedRef<HTMLInputElement>,

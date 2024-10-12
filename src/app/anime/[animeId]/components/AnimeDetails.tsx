@@ -6,6 +6,7 @@ interface Props {
   anime: Anime;
 }
 
+/** Informações detalhadas de um anime */
 function AnimeDetails({ anime }: Props) {
   return (
     <div className="space-y-8">

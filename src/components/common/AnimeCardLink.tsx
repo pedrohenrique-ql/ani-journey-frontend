@@ -9,6 +9,7 @@ interface Props {
   animeId: Anime['id'];
 }
 
+/** Link de um anime ao clicar em sua imagem */
 function AnimeCardLink({ imageUrl, animeId }: Props) {
   return (
     <Link href={`/anime/${animeId}`}>
