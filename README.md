@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## AniJourney - Frontend
 
-## Getting Started
+O AniJourney é um site voltado para os amantes de animes, sendo possível explorar sua jornada pelo mundo dos animes. O site foi desenvolvido utilizando a API [AniJourney - Backend](https://github.com/pedrohenrique-ql/ani-journey).
 
-First, run the development server:
+## Requisitos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Node.js v20.11.0](https://nodejs.org/en/download/)
+- [pnpm v9.12.1](https://pnpm.io/installation)
+- [Docker](https://docs.docker.com/engine/install/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Desenvolvimento
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Configure o repositório do [AniJourney - Backend](https://github.com/pedrohenrique-ql/ani-journey):
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   .
+   ├── ani-journey
+   └── ani-journey-frontend
+   ```
 
-## Learn More
+2. Clone o repositório:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone git@github.com:pedrohenrique-ql/ani-journey-frontend.git
+   cd ani-journey
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Instale as dependências:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+    pnpm install
+   ```
 
-## Deploy on Vercel
+4. Inicialize o backend:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   pnpm deps:up
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. Inicialize o frontend em outro terminal:
+
+   ```bash
+   pnpm dev
+   ```

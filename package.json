@@ -10,6 +10,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "deps:up": "npm --prefix ../ani-journey run deps:up && npm --prefix ../ani-journey run dev",
+    "deps:prepare": "npm --prefix ../ani-journey run deps:up && npm --prefix ../ani-journey run deps:prepare",
     "lint": "eslint --ext 'js,jsx,ts,tsx' --cache --no-error-on-unmatched-pattern --fix",
     "style": "prettier --log-level warn --ignore-unknown --no-error-on-unmatched-pattern --cache",
     "style:check": "pnpm style --check",
