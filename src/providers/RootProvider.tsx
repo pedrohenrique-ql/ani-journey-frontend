@@ -3,6 +3,8 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { PropsWithChildren, useMemo } from 'react';
 
+import APIProvider from './api/APIProvider';
+
 type Props = PropsWithChildren;
 
 function RootProvider({ children }: Props) {
@@ -10,7 +12,11 @@ function RootProvider({ children }: Props) {
     return new QueryClient();
   }, []);
 
-  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <APIProvider>{children}</APIProvider>
+    </QueryClientProvider>
+  );
 }
 
 export default RootProvider;

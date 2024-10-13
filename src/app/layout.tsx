@@ -19,10 +19,11 @@ export const metadata: Metadata = {
   description: 'Acompanhe e compartilhe sua jornada de animes',
 };
 
+/** Componente de layout raiz do sistema */
 function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="pt-BR">
-      <body className={clsx('text-zinc-900', poppinsFont.className)}>
+      <body className={clsx('bg-surface-dark-500 text-neutral-50 antialiased', poppinsFont.className)}>
         <RootProvider>{children}</RootProvider>
       </body>
     </html>
